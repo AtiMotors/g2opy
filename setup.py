@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from setuptools.command.install import install
 from distutils.sysconfig import get_python_lib
 import glob
@@ -32,6 +32,11 @@ setup(
     description='Python binding of C++ graph optimization framework g2o.',
     url='https://github.com/uoip/g2opy',
     license='BSD',
+    packages=find_packages(
+        where='lib',
+        include=['*g2o*'],  # alternatively: `exclude=['additional*']`
+    ),
+    package_dir={"": "lib"},
     cmdclass=dict(
         install=CopyLibFile
     ),
