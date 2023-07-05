@@ -183,15 +183,15 @@ void declareEigenTypes(py::module & m) {
             })
 
         //For eigen <= 3.3.4
-        .def("x", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::x)
-        .def("y", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::y)
-        .def("z", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::z)
-        .def("w", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::w)
+//        .def("x", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::x)
+  //      .def("y", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::y)
+   //     .def("z", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::z)
+  //      .def("w", (double (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::w)
         //For eigen > 3.3.4
-//        .def("x", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::x)
-//        .def("y", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::y)
-//        .def("z", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::z)
-//        .def("w", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::w)
+        .def("x", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::x)
+        .def("y", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::y)
+        .def("z", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::z)
+        .def("w", (const double& (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::w)
    
         .def("vec", (const Eigen::VectorBlock<const Eigen::Quaterniond::Coefficients,3> (Eigen::Quaterniond::*) () const) &Eigen::Quaterniond::vec)
 
