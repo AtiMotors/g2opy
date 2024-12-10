@@ -22,7 +22,7 @@ git clone https://github.com/uoip/g2opy.git
 cd g2opy
 mkdir build
 cd build
-cmake ..
+cmake .. #-DPYTHON_EXECUTABLE=/home/arindam/mules/mule_ga/.venv/bin/python3.8 # cmake .. -DPYBIND11_PYTHON_VERSION=3.8 -CMAKE_PREFIX_PATH="/home/arindam/mules/mule_ga/.venv/"
 make -j8
 cd ..
 python setup.py install
